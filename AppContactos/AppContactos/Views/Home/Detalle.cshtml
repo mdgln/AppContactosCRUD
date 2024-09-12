@@ -1,0 +1,30 @@
+﻿@model AppContactos.Models.Contacto
+
+@{
+    ViewData["Title"] = "Detalle Contacto";
+}
+
+<h1 class="text-center">App de Contactos</h1>
+
+<div class="row mt-5">
+    <div class="offset-12 width-form mx-auto">
+        <div class="card border">
+            <div class="card-header bg-black">
+                <h3 class="text-white"><strong>Detalle de Contacto</strong></h3>
+            </div>
+            <div class="card-body">
+
+                <ul class="list-group mb-3">
+                    <li class="list-group-item"><strong>@Html.DisplayNameFor(c => c.Nombre): </strong>@Html.DisplayFor(c => c.Nombre)</li>
+                    <li class="list-group-item"><strong>@Html.DisplayNameFor(c => c.Apellido): </strong>@Html.DisplayFor(c => c.Apellido)</li>
+                    <li class="list-group-item"><strong>@Html.DisplayNameFor(c => c.Telefono): </strong>@Html.DisplayFor(c => c.Telefono)</li>
+                    <li class="list-group-item"><strong>@Html.DisplayNameFor(c => c.Email): </strong>@Html.DisplayFor(c => c.Email)</li>
+                    <li class="list-group-item"><strong>@Html.DisplayNameFor(c => c.Notas): </strong>@Html.DisplayFor(c => c.Notas)</li>
+                    <li class="list-group-item"><strong>@Html.DisplayNameFor(c => c.FechaCreacion): </strong>@Html.DisplayFor(c => c.FechaCreacion)</li>
+                </ul>
+
+                <a asp-controller="Home" asp-action="Index">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>
