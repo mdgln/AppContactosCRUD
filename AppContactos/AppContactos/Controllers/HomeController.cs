@@ -19,7 +19,7 @@ namespace AppContactos.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Contacto.ToListAsync());
+            return View(await _context.Contacto.OrderBy(c => c.Nombre).ToListAsync());
         }
 
         [HttpGet]
@@ -36,6 +36,40 @@ namespace AppContactos.Controllers
             {
                 contacto.FechaCreacion = DateTime.Now;
                 _context.Contacto.Add(contacto);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Editar(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var contacto = _context.Contacto.Find(id);
+            if (contacto == null)
+            {
+                return NotFound();
+            }
+
+            return View(contacto);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Editar(Contacto contacto)
+        {
+            if (ModelState.IsValid)
+            {
+                var contactoAnterior = await _context.Contacto.AsNoTracking().FirstOrDefaultAsync(x => x.Id == contacto.Id);
+
+                contacto.FechaCreacion = contactoAnterior.FechaCreacion;
+                _context.Update(contacto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

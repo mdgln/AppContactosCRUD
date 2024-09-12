@@ -25,12 +25,12 @@
                         <table class="table table-bordered" id="tblContactos" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>@Html.DisplayNameFor(m => m.Id)</th>
+                                    @* <th>@Html.DisplayNameFor(m => m.Id)</th> *@
                                     <th>@Html.DisplayNameFor(m => m.Nombre)</th>
-                                    <th>@Html.DisplayNameFor(m => m.Apellido)</th>
+                                    @* <th>@Html.DisplayNameFor(m => m.Apellido)</th> *@
                                     <th>@Html.DisplayNameFor(m => m.Telefono)</th>
                                     <th>@Html.DisplayNameFor(m => m.Email)</th>
-                                    <th>@Html.DisplayNameFor(m => m.FechaCreacion)</th>
+                                    @* <th>@Html.DisplayNameFor(m => m.FechaCreacion)</th> *@
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -38,12 +38,12 @@
                                 @foreach(var item in Model)
                                 {
                                     <tr>
-                                        <td>@Html.DisplayFor(m => item.Id)</td>
-                                        <td>@Html.DisplayFor(m => item.Nombre)</td>
-                                        <td>@Html.DisplayFor(m => item.Apellido)</td>
+                                        @* <td>@Html.DisplayFor(m => item.Id)</td> *@
+                                        <td><strong>@Html.DisplayFor(m => item.Nombre)</strong> @Html.DisplayFor(m => item.Apellido)</td>
+                                        @* <td>@Html.DisplayFor(m => item.Apellido)</td> *@
                                         <td>@Html.DisplayFor(m => item.Telefono)</td>
                                         <td>@Html.DisplayFor(m => item.Email)</td>
-                                        <td>@Html.DisplayFor(m => item.FechaCreacion)</td>
+                                        @* <td>@Html.DisplayFor(m => item.FechaCreacion)</td> *@
                                         <td>
                                             <a class="btn btn-warning" asp-action="Editar" asp-route-id="@item.Id"><i class="fa-solid fa-pen"></i> Editar</a>
                                             <a class="btn btn-secondary" asp-action="Detalle" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i> Detalle</a>

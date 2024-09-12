@@ -9,11 +9,11 @@ namespace AppContactos.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "El Nombre es obligatorio")]
-        [StringLength(maximumLength: 25, MinimumLength = 5, ErrorMessage = "El Nombre debe tener de {2} a {1} caracteres")]
+        [StringLength(maximumLength: 25, MinimumLength = 2, ErrorMessage = "El Nombre debe tener de {2} a {1} caracteres")]
         public string Nombre { get; set; }
 
         [Required(ErrorMessage = "El Apellido es obligatorio")]
-        [StringLength(maximumLength: 25, MinimumLength = 5, ErrorMessage = "El Apellido debe tener de {2} a {1} caracteres")]
+        [StringLength(maximumLength: 25, MinimumLength = 2, ErrorMessage = "El Apellido debe tener de {2} a {1} caracteres")]
         public string Apellido { get; set; }
 
         [Required(ErrorMessage = "El Telefono es obligatorio")]
