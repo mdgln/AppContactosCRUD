@@ -21,6 +21,7 @@ namespace AppContactos.Models
         public string Telefono { get; set; }
 
         [StringLength(maximumLength: 50, ErrorMessage = "El Email debe de tener maximo {1} caracteres")]
+        [EmailAddress]
         public string Email { get; set; }
 
         public string Notas { get; set; }

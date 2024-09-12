@@ -30,11 +30,14 @@ namespace AppContactos.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Crear(Contacto contacto)
+        public async Task<IActionResult> Crear(Contacto contacto)
         {
             if(ModelState.IsValid)
             {
-
+                contacto.FechaCreacion = DateTime.Now;
+                _context.Contacto.Add(contacto);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
 
             return View();

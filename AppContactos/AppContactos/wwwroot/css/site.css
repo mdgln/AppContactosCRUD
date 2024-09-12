@@ -20,3 +20,14 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+@media (max-width: 767px) {
+    .width-form {
+        width: 100% !important;
+    }
+}
+@media (min-width: 768px) {
+    .width-form {
+        width: 75% !important;
+    }
+}
