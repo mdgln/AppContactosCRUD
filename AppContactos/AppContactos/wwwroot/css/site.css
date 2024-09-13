@@ -31,3 +31,11 @@ body {
         width: 75% !important;
     }
 }
+
+
+@media (max-width: 767px) {
+    .size-button {
+        margin-left: 0% !important;
+        width: 100% !important;
+    }
+}

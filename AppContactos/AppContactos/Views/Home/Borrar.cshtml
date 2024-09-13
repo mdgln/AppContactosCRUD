@@ -1,0 +1,57 @@
+﻿@model AppContactos.Models.Contacto
+
+@{
+    ViewData["Title"] = "Borrar Contacto";
+}
+
+<h1 class="text-center">App de Contactos</h1>
+
+<div class="row mt-5">
+    <div class="offset-12 width-form mx-auto">
+        <div class="card border">
+            <div class="card-header bg-black">
+                <h3 class="text-white"><strong>Borrar Contacto</strong></h3>
+            </div>
+            <div class="card-body">
+                <form asp-action="Borrar" method="post">
+                    <input type="hidden" asp-for="Id" />
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        @* <label asp-for="Nombre" class="control-label"></label> *@
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                        <input asp-for="Nombre" class="form-control" readonly />
+                    </div>
+                    <div class="form-group mt-2">
+                        @* <label asp-for="Apellido" class="control-label"></label> *@
+                        <span asp-validation-for="Apellido" class="text-danger"></span>
+                        <input asp-for="Apellido" class="form-control" readonly />
+                    </div>
+                    <div class="form-group mt-2">
+                        @* <label asp-for="Telefono" class="control-label"></label> *@
+                        <span asp-validation-for="Telefono" class="text-danger"></span>
+                        <input asp-for="Telefono" class="form-control" readonly />
+                    </div>
+                    <div class="form-group mt-2">
+                        @* <label asp-for="Email" class="control-label"></label> *@
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                        <input asp-for="Email" class="form-control" readonly />
+                    </div>
+                    <div class="form-group mt-2">
+                        @* <label asp-for="Notas" class="control-label"></label> *@
+                        <span asp-validation-for="Notas" class="text-danger"></span>
+                        <textarea asp-for="Notas" typeof="text" rows="5" class="w-100" readonly ></textarea>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-danger d-block mx-auto"><i class="fa-solid fa-trash"></i> Borrar</button>
+                    </div>
+
+                    <a asp-controller="Home" asp-action="Index">Volver</a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
